@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+	<head>
+		<title></title>
+		<meta charset="utf-8"> <!--encodage-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/> <!--meta pour le responsive-->
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		 
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+		
+		<!-- <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+		<!-- <script src = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js"></script> -->
+		<!-- <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css"/> -->
+		
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+	
+	<body onload="init()"class="p-3 mb-2 bg-info fst-italic" style="background-image: url('books.jpg');position: relative; background-position: center; background-size: cover; background-repeat: no-repeat;background-attachment: fixed">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 text-center">
+					<h1>Bibliothèque</h1>
+				</div>
+				
+				<div class="col-12" style="width:100%">
+					<nav class="navbar navbar-light bg-light">
+					<h5>Auteur(s):</h5>
+						<div class="input-group">
+							<select multiple = "multiple" onchange="recherche()" id="rechAuteur" type="text" class="form-control" placeholder="Sélectionner un auteur..." aria-label="Username" aria-describedby="basic-addon1">
+								<option>Sélectionner un auteur...</option>
+							</select>
+							<button id="btn" style="display:none">Valider</button>
+						</div>
+					</nav>
+				</div>
+				<div class="col-12" style="width:100%">
+					<nav class="navbar navbar-light bg-light">
+					<h5>Catégorie(s):</h5>
+						<div class="input-group">
+							
+							<select multiple = "multiple" onchange="rech()" id="rechCat" type="text" class="form-control" placeholder="Sélectionner une catégorie..." aria-label="Username" aria-describedby="basic-addon1">
+								<option>Sélectionner une catégorie...</option>
+							</select>
+							<button id="btn" style="display:none">Valider</button>
+						</div>
+					</nav>
+				</div>
+			</div>	
+			
+			<div id="card" class="row">
+				<!-- emplacement des cards -->
+			</div>
+			
+			<center>
+				<div id='messagechargement'>
+					<img border="0" src="load.gif">
+				</div>
+			</center>
+			
+				<!-- Button trigger modal -->
+					<!-- emplacement du bouton de la modal -->
+					
+					<!-- Modal -->
+					<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="staticBackdropLabel">Description du livre</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body" id="desc">
+							
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						</div>
+						</div>
+					</div>
+					</div>
+		</div>
+		
+	</body> 
+</html>
